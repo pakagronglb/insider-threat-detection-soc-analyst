@@ -20,6 +20,7 @@ A Python application that generates simulated logs and detects suspicious user b
   - Data snooping (accessing data outside job responsibilities)
 - Unsupervised learning for detecting novel anomalies
 - Detailed threat type analysis and feature importance
+- Color-coded terminal output for easy visualization of threats and severity levels
 
 ## Setup 📦
 
@@ -49,6 +50,47 @@ Simply run the main script which will:
 ```
 python main.py
 ```
+
+You can also generate just the log data without running the detection by executing:
+```
+python generate_logs.py
+```
+
+## Project Structure 📂
+
+```
+.
+├── data/                   # Contains generated log data
+├── outputs/                # Analysis results and reports
+├── src/                    # Core modules
+│   ├── ai_explainer.py     # AI explanations for detected anomalies
+│   ├── feature_engineer.py # Feature extraction from raw logs
+│   ├── ingest.py           # Data loading utilities
+│   └── model.py            # ML models for anomaly detection
+├── .env                    # Environment variables (API keys)
+├── .gitignore              # Files to exclude from version control
+├── generate_logs.py        # Script to generate simulated log data
+├── main.py                 # Main application entry point
+└── requirements.txt        # Python dependencies
+```
+
+## Learning Modes 🧠
+
+The system supports two learning approaches:
+
+### Supervised Learning
+- Used when labeled data is available
+- Requires examples of normal and suspicious behavior
+- Can identify specific types of threats with higher precision
+- Outputs confidence scores and threat type probabilities
+- Activated automatically when labels are present in the data
+
+### Unsupervised Learning
+- Used when no labeled data is available
+- Identifies statistical outliers from normal behavior
+- Good for detecting novel anomalies
+- Less specific in identifying the exact threat type
+- Used as a fallback when no labels are available
 
 ## Understanding the Results 📝
 
@@ -127,8 +169,4 @@ User: suspicious_offhours
 - sensitive_resource_pct: 0.0215
 - cross_dept_access_pct: 0.0178
 ======================================
-```
-
-```
-python data/simulated_logs.py
 ```
