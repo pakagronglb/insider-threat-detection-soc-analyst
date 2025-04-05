@@ -1,5 +1,9 @@
 # Insider Threat Detection System 🐞
 
+<img width="532" alt="Screenshot 2025-04-05 at 22 21 46" src="https://github.com/user-attachments/assets/cd458838-f3c1-49e2-af66-f2cdce356047" />
+
+<img width="530" alt="Screenshot 2025-04-05 at 22 21 57" src="https://github.com/user-attachments/assets/9eb54a5a-c373-4f94-964b-87bf86246f08" />
+
 A Python application that generates simulated logs and detects suspicious user behaviour patterns that may indicate insider threats.
 
 ## Features ✨
